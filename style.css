@@ -1,49 +1,204 @@
-body {
-  font-family: Arial, sans-serif;
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
+body {
+  background: #f5f7fa;
+  color: #222;
+}
+
+/* ---------------- NAVBAR ---------------- */
 nav {
-  background: #333;
-  color: #fff;
-  padding: 1rem;
+  background: #111827;
+  color: white;
+  padding: 1rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 nav h1 {
-  margin: 0;
+  font-size: 1.7rem;
+  letter-spacing: 1px;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 1rem;
-  padding: 0;
+  gap: 2rem;
 }
 
 nav a {
-  color: #fff;
+  color: white;
   text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
 }
 
+nav a:hover {
+  color: #38bdf8;
+}
+
+/* ---------------- HERO SECTION ---------------- */
 .hero {
   text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, #0ea5e9, #6366f1);
+  color: white;
+}
+
+.hero h2 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+/* ---------------- SECTION HEADINGS ---------------- */
+section h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+/* ---------------- DASHBOARD CARDS ---------------- */
+#dashboard {
   padding: 2rem;
-  background: #f4f4f4;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
 }
 
-section {
-  padding: 1rem 2rem;
+#dashboard p {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: 0.3s;
 }
 
+#dashboard p:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+
+/* ---------------- ADD PLAYER FORM ---------------- */
+#add-player {
+  background: white;
+  margin: 2rem;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+#player-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 1rem;
+}
+
+#player-form input,
+#player-form select {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+#player-form input:focus,
+#player-form select:focus {
+  border-color: #6366f1;
+  outline: none;
+  box-shadow: 0 0 5px rgba(99,102,241,0.4);
+}
+
+#player-form button {
+  padding: 0.9rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#player-form button[type="submit"] {
+  background: #10b981;
+  color: white;
+}
+
+#player-form button[type="submit"]:hover {
+  background: #059669;
+  transform: scale(1.03);
+}
+
+#clear-btn {
+  background: #ef4444;
+  color: white;
+}
+
+#clear-btn:hover {
+  background: #dc2626;
+  transform: scale(1.03);
+}
+
+/* ---------------- TABLE ---------------- */
 table {
-  width: 100%;
+  width: 95%;
+  margin: 2rem auto;
   border-collapse: collapse;
-  margin-top: 1rem;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-th, td {
-  border: 1px solid #ccc;
-  padding: 0.5rem;
+th {
+  background: #4f46e5;
+  color: white;
+  padding: 1rem;
+}
+
+td {
+  background: white;
+  padding: 0.8rem;
+  border-bottom: 1px solid #e5e7eb;
   text-align: center;
+}
+
+tr:hover td {
+  background: #f1f5f9;
+}
+
+/* ---------------- LEADERBOARD ---------------- */
+#leaderboard {
+  margin: 2rem;
+  padding: 1.5rem;
+}
+
+#leaderboard-list div {
+  background: white;
+  padding: 1rem;
+  margin-bottom: 0.8rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+#leaderboard-list div:hover {
+  transform: translateX(10px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }

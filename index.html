@@ -1,87 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cricket Analyzer</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <!-- NAVBAR -->
-  <nav>
-    <h1>Cricket Analyzer</h1>
-    <ul>
-      <li><a href="#dashboard">Dashboard</a></li>
-      <li><a href="#add-player">Add Player</a></li>
-      <li><a href="#statistics">Statistics</a></li>
-      <li><a href="#analytics">Analytics</a></li>
-      <li><a href="#leaderboard">Leaderboard</a></li>
-    </ul>
-  </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h2>Cricket Analytics</h2>
-    <p>Track and compare player performance</p>
-  </section>
+<nav>
+  <h1>Cricket Analyzer</h1>
+  <ul>
+    <li><a href="#dashboard">Dashboard</a></li>
+    <li><a href="#add-player">Add Player</a></li>
+    <li><a href="#statistics">Statistics</a></li>
+    <li><a href="#leaderboard">Leaderboard</a></li>
+  </ul>
+</nav>
 
-  <!-- DASHBOARD -->
-  <section id="dashboard">
-    <h3>Dashboard</h3>
-    <p>Total Players: <span id="total-players">0</span></p>
-    <p>Total Runs: <span id="total-runs">0</span></p>
-    <p>Avg Strike Rate: <span id="avg-strike-rate">0</span></p>
-    <p>Total Boundaries: <span id="total-boundaries">0</span></p>
-  </section>
+<div class="hero">
+  <h2>Cricket Performance Analyzer</h2>
+  <p>Track strike rate, boundaries, and player rankings</p>
+</div>
 
-  <!-- ADD PLAYER -->
-  <section id="add-player">
-    <h3>Add Player</h3>
-    <form id="player-form">
-      <input type="text" id="player-name" placeholder="Player Name" required>
-      <input type="text" id="team" placeholder="Team Name" required>
-      <input type="number" id="runs" placeholder="Runs" required>
-      <input type="number" id="balls" placeholder="Balls" required>
-      <input type="number" id="fours" placeholder="Fours" required>
-      <input type="number" id="sixes" placeholder="Sixes" required>
-      <select id="match-type">
-        <option value="T20">T20</option>
-        <option value="ODI">ODI</option>
-        <option value="Test">Test</option>
-      </select>
-      <button type="submit">Add Player</button>
-    </form>
-  </section>
+<section id="dashboard">
+  <h3>Dashboard</h3>
+  <p>Total Players: <strong id="total-players">0</strong></p>
+  <p>Total Runs: <strong id="total-runs">0</strong></p>
+  <p>Average Strike Rate: <strong id="avg-strike-rate">0</strong></p>
+  <p>Total Boundaries: <strong id="total-boundaries">0</strong></p>
+</section>
 
-  <!-- STATISTICS -->
-  <section id="statistics">
-    <h3>Statistics</h3>
-    <table>
-      <thead>
-        <tr>
-          <th>Player</th><th>Team</th><th>Format</th>
-          <th>Runs</th><th>Balls</th><th>4s</th><th>6s</th><th>Strike Rate</th>
-        </tr>
-      </thead>
-      <tbody id="scorecard-body"></tbody>
-    </table>
-  </section>
+<section id="add-player">
+  <h3>Add Player</h3>
+  <form id="player-form">
+    <input type="text" id="player-name" placeholder="Player Name" required>
+    <input type="text" id="team" placeholder="Team Name" required>
+    <input type="number" id="runs" placeholder="Runs" required>
+    <input type="number" id="balls" placeholder="Balls" required>
+    <input type="number" id="fours" placeholder="Fours" required>
+    <input type="number" id="sixes" placeholder="Sixes" required>
+    <select id="match-type">
+      <option value="T20">T20</option>
+      <option value="ODI">ODI</option>
+      <option value="Test">Test</option>
+    </select>
+    <button type="submit">Add Player</button>
+    <button type="button" id="clear-btn">Clear All</button>
+  </form>
+</section>
 
-  <!-- ANALYTICS -->
-  <section id="analytics">
-    <h3>Analytics</h3>
-    <canvas id="runsChart"></canvas>
-    <canvas id="strikeChart"></canvas>
-    <canvas id="boundaryChart"></canvas>
-  </section>
+<section id="statistics">
+  <h3>Statistics Table</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Player</th><th>Team</th><th>Format</th>
+        <th>Runs</th><th>Balls</th><th>4s</th><th>6s</th><th>Strike Rate</th>
+      </tr>
+    </thead>
+    <tbody id="scorecard-body"></tbody>
+  </table>
+</section>
 
-  <!-- LEADERBOARD -->
-  <section id="leaderboard">
-    <h3>Leaderboard</h3>
-    <div id="leaderboard-list"></div>
-  </section>
+<section id="leaderboard">
+  <h3>Leaderboard (Top SR)</h3>
+  <div id="leaderboard-list"></div>
+</section>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
